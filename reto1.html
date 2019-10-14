@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reto1</title>
+    <style>
+        @font-face {
+        font-family: 'icomoon';
+        src:  url('fonts/icomoon.eot?xuomxr');
+        src:  url('fonts/icomoon.eot?xuomxr#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?xuomxr') format('truetype'),
+        url('fonts/icomoon.woff?xuomxr') format('woff'),
+        url('fonts/icomoon.svg?xuomxr#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-heart:before {
+        content: "\e902";
+        }
+        .icon-like:before {
+        content: "\e902";
+        }
+        .icon-love:before {
+        content: "\e902";
+        }
+        .icon-favorite:before {
+        content: "\e902";
+        }
+        .icon-fire:before {
+        content: "\e900";
+        }
+        .icon-flame:before {
+        content: "\e900";
+        }
+        .icon-hot:before {
+        content: "\e900";
+        }
+        .icon-popular:before {
+        content: "\e900";
+        }
+        .icon-home:before {
+        content: "\e901";
+        }
+        .icon-house:before {
+        content: "\e901";
+        }
+        /* Este es fin de las iconos importados */
+        .container{
+            display:grid;
+            grid-template-columns:90px 300px 300px 300px;
+            grid-template-rows: 90px 300px 300px 300px;
+            grid-gap:5px;
+            justify-content: center;
+            grid-template-areas:"menu menu menu menu"
+                                "izquierda foto1 foto2 foto3"
+                                "izquierda foto4 foto5 foto6"
+                                "izquierda foto7 foto8 foto9";
+        }
+        .menu{
+            display: flex;
+            grid-area: menu;
+            border: 2px solid rgb(224, 222, 222);
+            background: rgb(241, 140, 46);
+        }
+        .menuLogo{
+            margin-top: -5px;
+        }
+        .menuBarra{
+            margin-top:25px ;
+            margin-right: 20px;
+            margin-left: 200px;
+        
+        }
+        .menuNombre{
+            margin-top: 12px;
+        }
+        .menuSandia{
+            margin-top:5px;
+        }
+        .barra-izquierda{
+            grid-area: izquierda;
+            background: rgb(241, 140, 46);
+        } 
+        .icon-house{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .icon-fire{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .icon-heart{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .foto{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto-imagen{
+            margin:0;
+        }
+        .foto-imagen img{
+            vertical-align: top;
+        }
+        .foto2{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto2-imagen{
+            margin:0;
+        }
+        .foto2-imagen img{
+            vertical-align: top;
+        }
+        .foto3{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto3-imagen{
+            margin:0;
+        }
+        .foto3-imagen img{
+            vertical-align: top;
+        }
+        .foto4{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto4-imagen{
+            margin:0;
+        }
+        .foto4-imagen img{
+            vertical-align: top;
+        }
+        .foto5{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto5-imagen{
+            margin:0;
+        }
+        .foto5-imagen img{
+            vertical-align: top;
+        }
+        .foto6{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto6-imagen{
+            margin:0;
+        }
+        .foto6-imagen img{
+            vertical-align: top;
+        }
+        .foto7{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto7-imagen{
+            margin:0;
+        }
+        .foto7-imagen img{
+            vertical-align: top;
+        }
+        .foto8{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto8-imagen{
+            margin:0;
+        }
+        .foto8-imagen img{
+            vertical-align: top;
+        }
+        .foto9{
+            cursor:pointer;
+            position:relative;
+            display: block;
+        }
+        
+        .foto9-imagen{
+            margin:0;
+        }
+        .foto9-imagen img{
+            vertical-align: top;
+        }
+        .contenido{
+            width: 280px;
+            margin:0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top:0;
+            display: none;
+            align-items: center;
+            color: white;
+            margin-left: 2px;
+        }
+        .foto:hover .contenido{
+            display:flex;
+        }
+        .foto{
+            grid-area:foto1;
+        }
+        .foto2{
+            grid-area:foto2;
+        }
+        .foto2:hover .contenido{
+            display:flex;
+        }
+        .foto3{
+            grid-area:foto3;
+        }
+        .foto3:hover .contenido{
+            display:flex;
+        }
+        .foto4{
+            grid-area:foto4;
+        }
+        .foto4:hover .contenido{
+            display:flex;
+        }
+        .foto5{
+            grid-area:foto5;
+        }
+        .foto5:hover .contenido{
+            display:flex;
+        }
+        .foto6{
+            grid-area:foto6;
+        }
+        .foto6:hover .contenido{
+            display:flex;
+        }
+        .foto7{
+            grid-area:foto7;
+        }
+        .foto7:hover .contenido{
+            display:flex;
+        }
+        .foto8{
+            grid-area:foto8;
+        }
+        .foto8:hover .contenido{
+            display:flex;
+        }
+        .foto9{
+            grid-area:foto9;
+        }
+        .foto9:hover .contenido{
+            display:flex;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="container">
+        <article class="menu">
+            <figure class="menuLogo">
+                <img src="cine.jpg" alt="" width="70px">
+            </figure>
+            <div class="menuBarra">
+                <input type="text" placeholder="Busca tus pelis ,actores o directores favoritos" size=50>
+            </div>
+            <div class="menuNombre">
+                <p>Usuaria1045</p>
+            </div>
+            <figure class="menuSandia">
+                <img src="sandia.jpg" alt="" width="50px">
+            </figure>
+        </article>
+        <article class="barra-izquierda">
+            <i class="icon-house"></i><br>
+            <h5>home</h5>
+            <i class="icon-fire"></i><br>
+            <h5>Trending</h5>
+            <i class="icon-heart"></i>
+            <h5>Mas likes</h5>
+        </article>
+        <a href=""class="foto ">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto2">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto3">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto4">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto5">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto6">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto7">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto8">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        <a href=""class="foto9">
+                <figure class="foto-imagen">
+                    <img src="pallaso.jpg" alt="" width="280px">
+                </figure>
+                <span class="contenido">
+                    <p>Joker mostrará por primera vez los orígenes del icónico archienemigo por excelencia de Batman.</p>
+                </span>
+        </a>
+        
+    </section>
+</body>
+</html>

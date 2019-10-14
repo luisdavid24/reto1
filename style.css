@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?xuomxr');
+  src:  url('fonts/icomoon.eot?xuomxr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xuomxr') format('truetype'),
+    url('fonts/icomoon.woff?xuomxr') format('woff'),
+    url('fonts/icomoon.svg?xuomxr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before {
+  content: "\e902";
+}
+.icon-like:before {
+  content: "\e902";
+}
+.icon-love:before {
+  content: "\e902";
+}
+.icon-favorite:before {
+  content: "\e902";
+}
+.icon-fire:before {
+  content: "\e900";
+}
+.icon-flame:before {
+  content: "\e900";
+}
+.icon-hot:before {
+  content: "\e900";
+}
+.icon-popular:before {
+  content: "\e900";
+}
+.icon-home:before {
+  content: "\e901";
+}
+.icon-house:before {
+  content: "\e901";
+}
